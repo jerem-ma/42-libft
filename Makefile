@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/22 12:50:34 by jmaia             #+#    #+#              #
+#    Updated: 2021/11/22 12:50:36 by jmaia            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS	=	$(addprefix srcs/,ft_isalpha.c,ft_isdigit.c,ft_isalnum,ft_isascii.c,
 													ft_isprint.c,ft_strlen.c,ft_memset.c,ft_bzero.c,
 													ft_memcpy.c,ft_memmove.c,ft_strlcpy.c,ft_strlcat.c,
