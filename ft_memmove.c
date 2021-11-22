@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:31:44 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/22 17:35:01 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/22 17:42:27 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ft_memcpy(temporary_area, src, n);
 	ft_memcpy(dest, temporary_area, n);
 	free(temporary_area);
-	
 	return (dest);
 }
