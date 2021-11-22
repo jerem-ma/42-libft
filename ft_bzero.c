@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:21:00 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/22 17:23:06 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/22 17:27:11 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*cur;
 	size_t	i;
 
-	*cur = s;
+	cur = s;
 	i = 0;
 	while (i < n)
 	{
