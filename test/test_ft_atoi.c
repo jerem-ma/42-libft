@@ -1,4 +1,6 @@
 #include "../libft.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 static char *rand_string(char *str, size_t size)
 {
