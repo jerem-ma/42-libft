@@ -35,8 +35,8 @@ void test_ft_memchr(void)
 	{
 		c = rand() % 256;
 		str = rand_string_alloc(100);
-		if (memchr(str) != ft_memchr(str))
-			printf("Difference with %s - %c : ft_memchr(str, c) = %p, memchr(str, c) = %p\n", str, c, ft_memchr(str, c), memchr(str, c));
+		if (memchr(str, c, 100) != ft_memchr(str, c, 100))
+			printf("Difference with %s - %c : ft_memchr(str, c) = %p, memchr(str, c) = %p\n", str, c, ft_memchr(str, c, 100), memchr(str, c, 100));
 		free(str);
 	}
 

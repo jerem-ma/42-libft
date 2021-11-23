@@ -1,6 +1,8 @@
 #include "../libft.h"
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 void test_ft_memcpy(void)
 {
@@ -12,8 +14,8 @@ void test_ft_memcpy(void)
 		int n = rand() % 50;
 		ft_memcpy(ptr1, ptrsrc, n);
 		memcpy(ptr2, ptrsrc, n);
-		if (memcmp(ptr1, ptr2, n)
-			printf("Difference with i = %d", c, i);
+		if (memcmp(ptr1, ptr2, n))
+			printf("Difference between the 2 : %d", memcmp(ptr1, ptr2, n));
 	}
 	free(ptr1);
 	free(ptr2);

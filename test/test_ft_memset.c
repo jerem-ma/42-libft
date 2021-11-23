@@ -1,6 +1,8 @@
 #include "../libft.h"
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 void test_ft_memset(void)
 {
@@ -10,7 +12,7 @@ void test_ft_memset(void)
 	{
 		unsigned char c = rand() % 256;
 		int n = rand() % 50;
-		if (memcmp(ft_memset(ptr1, c, n), memset(ptr2, c, n)))
+		if (memcmp(ft_memset(ptr1, c, n), memset(ptr2, c, n), n))
 			printf("Difference with c = %d and i = %d", c, i);
 	}
 	free(ptr1);

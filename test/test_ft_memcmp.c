@@ -30,13 +30,15 @@ static char* rand_string_alloc(size_t size)
 void test_ft_memcmp(void)
 {
 	char	*str;
+	char	*str2;
+	int		n;
 	for (int i = 0; i < 500; i++)
 	{
 		str = rand_string_alloc(10);
 		str2 = rand_string_alloc(10);
 		n = rand() % 10;
 		if (memcmp(str, str2, n) != ft_memcmp(str, str2, n))
-			printf("Difference with %s : ft_memcmp(str) = %lu, memcmp(str) = %lu\n", str, ft_memcmp(str), memcmp(str));
+			printf("Difference with %s : ft_memcmp(str) = %d, memcmp(str) = %d\n", str, ft_memcmp(str, str2, n), memcmp(str, str2, n));
 		free(str);
 		free(str2);
 	}
@@ -46,7 +48,7 @@ void test_ft_memcmp(void)
 		str2 = rand_string_alloc(2);
 		n = rand() % 2;
 		if (memcmp(str, str2, n) != ft_memcmp(str, str2, n))
-			printf("Difference with %s : ft_memcmp(str) = %lu, memcmp(str) = %lu\n", str, ft_memcmp(str), memcmp(str));
+			printf("Difference with %s : ft_memcmp(str) = %d, memcmp(str) = %d\n", str, ft_memcmp(str, str2, n), memcmp(str, str2, n));
 		free(str);
 		free(str2);
 	}

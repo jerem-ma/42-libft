@@ -1,6 +1,8 @@
 #include "../libft.h"
+#include <stdio.h>
+#include <ctype.h>
 
-int test_ft_isdigit(void)
+void test_ft_isdigit(void)
 {
 	for (int i = -512; i < 512; i++)
 	{

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 
 static char *rand_string(char *str, size_t size)
 {

@@ -1,6 +1,8 @@
 #include "../libft.h"
+#include <stdio.h>
+#include <ctype.h>
 
-int test_ft_isascii(void)
+void test_ft_isascii(void)
 {
 	for (int i = -512; i < 512; i++)
 	{

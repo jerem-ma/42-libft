@@ -35,7 +35,7 @@ void test_ft_strrchr(void)
 	{
 		c = rand() % 256;
 		str = rand_string_alloc(100);
-		if (strrchr(str) != ft_strrchr(str))
+		if (strrchr(str, c) != ft_strrchr(str, c))
 			printf("Difference with %s - %c : ft_strrchr(str, c) = %p, strrchr(str, c) = %p\n", str, c, ft_strrchr(str, c), strrchr(str, c));
 		free(str);
 	}

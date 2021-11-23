@@ -1,6 +1,8 @@
 #include "../libft.h"
+#include <ctype.h>
+#include <stdio.h>
 
-int test_ft_isalnum(void)
+void test_ft_isalnum(void)
 {
 	for (int i = -512; i < 512; i++)
 	{
