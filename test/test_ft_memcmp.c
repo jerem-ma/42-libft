@@ -27,7 +27,7 @@ static char* rand_string_alloc(size_t size)
 	return s;
 }
 
-void test_ft_strncmp(void)
+void test_ft_memcmp(void)
 {
 	char	*str;
 	for (int i = 0; i < 500; i++)
@@ -35,8 +35,8 @@ void test_ft_strncmp(void)
 		str = rand_string_alloc(10);
 		str2 = rand_string_alloc(10);
 		n = rand() % 10;
-		if (strncmp(str, str2, n) != ft_strncmp(str, str2, n))
-			printf("Difference with %s : ft_strncmp(str) = %lu, strncmp(str) = %lu\n", str, ft_strncmp(str, str2), strncmp(str, str2));
+		if (memcmp(str, str2, n) != ft_memcmp(str, str2, n))
+			printf("Difference with %s : ft_memcmp(str) = %lu, memcmp(str) = %lu\n", str, ft_memcmp(str), memcmp(str));
 		free(str);
 		free(str2);
 	}
@@ -45,8 +45,8 @@ void test_ft_strncmp(void)
 		str = rand_string_alloc(2);
 		str2 = rand_string_alloc(2);
 		n = rand() % 2;
-		if (strncmp(str, str2, n) != ft_strncmp(str, str2, n))
-			printf("Difference with %s : ft_strncmp(str) = %lu, strncmp(str) = %lu\n", str, ft_strncmp(str, str2), strncmp(str, str2));
+		if (memcmp(str, str2, n) != ft_memcmp(str, str2, n))
+			printf("Difference with %s : ft_memcmp(str) = %lu, memcmp(str) = %lu\n", str, ft_memcmp(str), memcmp(str));
 		free(str);
 		free(str2);
 	}
