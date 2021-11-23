@@ -24,10 +24,9 @@ static char* rand_string_alloc(size_t size)
 	return s;
 }
 
-int test_ft_atoi(void)
+void test_ft_atoi(void)
 {
 	char	*n1;	
-	char	*n2;
 
 	for (int i = 0; i < 500; i++)
 	{
