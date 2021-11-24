@@ -4,22 +4,25 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static void	test(char *s, char (*f)(unsigned int, char*), char *result)
+static void	test(char *s, void (*f)(unsigned int, char*), char *result)
 {
+	char *old_s;
+
+	old_s = strdup(s);
 	ft_striteri(s, f);
 
 	if (strcmp(s, result))
 	{
-		printf("Error ! Diff between ft_striteri = %s and result = %s with s = %s, f = %p\n", res_ft, result, s, f);
+		printf("Error ! Diff between ft_striteri = %s and result = %s with s = %s, f = %p\n", s, result, old_s, f);
 	}
 	else
 		printf("Ok ! \n");
-	free(res_ft);
+	free(old_s);
 }
 
-static char	roti(unsigned int i, char c)
+static void	roti(unsigned int i, char *c)
 {
-	return ((c + i) % 256);
+	*c = ((*c + i) % 256);
 }
 
 void	test_ft_striteri()
