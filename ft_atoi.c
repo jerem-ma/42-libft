@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 09:23:14 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 12:13:17 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/24 17:35:43 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_isspace(char c)
 {
-	return ((c >= '\t' && c <= 'r') || c == ' ');
+	return ((c >= '\t' && c <= '\r') || c == ' ');
 }
 
 int	ft_atoi(const char *nptr)
@@ -26,10 +26,9 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	cur = (char *)nptr;
+	sign = 0;
 	while (ft_isspace(*cur))
-	{
 		cur++;
-	}
 	if (*cur == '+' || *cur == '-')
 	{
 		sign = *cur == '-';
@@ -39,6 +38,7 @@ int	ft_atoi(const char *nptr)
 	{
 		digit = *cur - '0';
 		result = result * 10 + digit;
+		cur++;
 	}
 	return (result * (-2 * sign + 1));
 }
