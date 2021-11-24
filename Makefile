@@ -6,7 +6,7 @@
 #    By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 12:50:34 by jmaia             #+#    #+#              #
-#    Updated: 2021/11/24 15:46:53 by jmaia            ###   ########.fr        #
+#    Updated: 2021/11/24 15:58:11 by jmaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,6 @@ fclean	:	clean
 re		:	fclean	${NAME}
 
 bonus	:	$(NAME) ${OBJS_BONUS}
-	ar r libft.a OBJS_BONUS
+	ar r libft.a ${OBJS_BONUS}
 
 .PHONY	:	all clean fclean re bonus
