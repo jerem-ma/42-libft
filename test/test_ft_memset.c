@@ -13,7 +13,7 @@ void test_ft_memset(void)
 		unsigned char c = rand() % 256;
 		int n = rand() % 50;
 		if (memcmp(ft_memset(ptr1, c, n), memset(ptr2, c, n), n))
-			printf("Difference with c = %d and i = %d", c, i);
+			printf("Difference with c = %d and n = %d\n", c, n);
 	}
 	free(ptr1);
 	free(ptr2);

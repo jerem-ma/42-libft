@@ -17,7 +17,7 @@ void	test_ft_calloc()
 	}
 	free(ptr);
 
-	size_t	n = 2147483647;
+	size_t	n = 9223372036854775807;
 	size_t	m = 2;
 
 	while (1)
@@ -27,11 +27,9 @@ void	test_ft_calloc()
 		{
 			ptr = ft_calloc(n, m);
 			if (ptr != 0)
-			{
 				printf("Error ! ptr should be zero with nmemb = %zu and lsize = %zu", n, m);
-				break;
-			}
 			free(ptr);
+			break;
 		}
 		m++;
 	}
