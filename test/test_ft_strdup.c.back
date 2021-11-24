@@ -1,0 +1,63 @@
+#include <sys/resource.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include "../libft.h"
+
+void	test_ft_strdup()
+{
+	struct rlimit default_limit;
+	getrlimit(RLIMIT_AS, &default_limit);
+	struct rlimit limit = {.rlim_cur = 9000000, .rlim_max = 9000000};
+	setrlimit(RLIMIT_AS, &limit);
+	int	i = 0;
+
+	printf("Eating memory...\n");
+	void **ptr_tab = malloc(sizeof(void*) * 20000);
+	while (1)
+	{
+		void *ptr1 = malloc(100);
+		if (ptr1 == 0)
+			break;
+		ptr_tab[i] = ptr1;
+		i++;
+	}
+	printf("Yum ! %d bytes of memory eaten !\n", i*100);
+
+	printf("Throwing up a bit of memory...\n");
+	for (int j = 0; j < 100; j++)
+	{
+		free(ptr_tab[j]);
+		ptr_tab[j] = 0;
+	}
+	printf("Burp !\n");
+
+	printf("Creating mini str...\n");
+	char *val1 = malloc(10);
+	for (int j = 0; j < 10; j++)
+		val1[j] = ' ';
+	val1[9] = 0;
+	printf("Created !\n");
+
+	printf("Eating by duplication until overdose...\n");
+	errno = 0;
+	for (int j = 0; j < 1000000; j++)
+	{
+		char *valdup = strdup(val1);
+		if (valdup == 0)
+		{
+			printf("Can't eat anymore :/\n");
+			if (errno != ENOMEM)
+				printf("errno should be ENOMEM(%d) but %d instead", ENOMEM, errno);
+			break;
+		}
+	}
+	printf("End of this test ! Throwing up all used memory...\n");
+	for (int j = 0; j < i; j++)
+	{
+		free(ptr_tab[j]);
+		ptr_tab[j] = 0;
+	}
+	free(ptr_tab);
+	setrlimit(RLIMIT_AS, &default_limit);
+}
