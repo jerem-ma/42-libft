@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 09:23:14 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/23 09:38:35 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/24 12:13:17 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	cur = (char *)nptr;
-	while(ft_isspace(*cur))
+	while (ft_isspace(*cur))
 	{
 		cur++;
 	}
