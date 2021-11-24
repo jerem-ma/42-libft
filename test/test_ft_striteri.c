@@ -4,13 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static void	test(char const *s, char (*f)(unsigned int, char), char *result)
+static void	test(char *s, char (*f)(unsigned int, char*), char *result)
 {
-	char	*res_ft = ft_strmapi(s, f);
+	ft_striteri(s, f);
 
-	if (strcmp(res_ft, result))
+	if (strcmp(s, result))
 	{
-		printf("Error ! Diff between ft_strmapi = %s and result = %s with s = %s, f = %p\n", res_ft, result, s, f);
+		printf("Error ! Diff between ft_striteri = %s and result = %s with s = %s, f = %p\n", res_ft, result, s, f);
 	}
 	else
 		printf("Ok ! \n");
@@ -22,7 +22,7 @@ static char	roti(unsigned int i, char c)
 	return ((c + i) % 256);
 }
 
-void	test_ft_strmapi()
+void	test_ft_striteri()
 {
 	test("Coucou", &roti, "Cpwfsz");
 	test("", &roti, "");
