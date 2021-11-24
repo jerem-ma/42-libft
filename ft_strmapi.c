@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 09:23:14 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 12:13:17 by jmaia            ###   ########.fr       */
+/*   Created: 2021/11/24 14:48:30 by jmaia             #+#    #+#             */
+/*   Updated: 2021/11/24 14:52:55 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-static int	ft_isspace(char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	return ((c >= '\t' && c <= 'r') || c == ' ');
-}
+	size_t			len_s;
+	char			*mapped;
+	unsigned int	i;
 
-int	ft_atoi(const char *nptr)
-{
-	char	*cur;
-	int		result;
-	int		sign;
-	int		digit;
-
-	result = 0;
-	cur = (char *)nptr;
-	while (ft_isspace(*cur))
+	len_s = ft_strlen(s);
+	mapped = malloc(sizeof(*mapped) * (len_s + 1));
+	i = 0;
+	while (i < len_s)
 	{
-		cur++;
+		mapped[i] = f(i, s[i]);
+		i++;
 	}
-	if (*cur == '+' || *cur == '-')
-	{
-		sign = *cur == '-';
-		cur++;
-	}
-	while (ft_isdigit(*cur))
-	{
-		digit = *cur - '0';
-		result = result * 10 + digit;
-	}
-	return (result * (-2 * sign + 1));
+	mapped[i] = 0;
+	return (mapped);
 }

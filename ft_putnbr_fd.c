@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 09:23:14 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 12:13:17 by jmaia            ###   ########.fr       */
+/*   Created: 2021/11/24 15:07:38 by jmaia             #+#    #+#             */
+/*   Updated: 2021/11/24 15:28:38 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-static int	ft_isspace(char c)
+static void	ft_putnbr_positive_fd(unsigned int n, int fd)
 {
-	return ((c >= '\t' && c <= 'r') || c == ' ');
+	char	c;
+
+	if (n < 10)
+	{
+		c = n + '0';
+		write(fd, &n, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }
 
-int	ft_atoi(const char *nptr)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*cur;
-	int		result;
-	int		sign;
-	int		digit;
-
-	result = 0;
-	cur = (char *)nptr;
-	while (ft_isspace(*cur))
-	{
-		cur++;
-	}
-	if (*cur == '+' || *cur == '-')
-	{
-		sign = *cur == '-';
-		cur++;
-	}
-	while (ft_isdigit(*cur))
-	{
-		digit = *cur - '0';
-		result = result * 10 + digit;
-	}
-	return (result * (-2 * sign + 1));
+	if (n < 0)
+		write(fd, "-", 1);
+	ft_putnbr_positive_fd((unsigned int) n, fd);
 }
