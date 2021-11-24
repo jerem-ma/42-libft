@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 15:52:25 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/24 16:04:48 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list
+}	t_list;
 #endif
