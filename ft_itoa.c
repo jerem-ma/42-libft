@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 14:47:04 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/24 14:54:50 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,13 @@ char	*fill_number(int nb_len, long nb, char *base, int base_len)
 {
 	int		i;
 	int		digit;
-	char	c;
 	int		str_len;
 	char	*itoad;
 
 	i = -1;
 	str_len = nb_len + (nb < 0) + 1;
 	itoad = malloc(sizeof(*itoad) * str_len);
-	if (itoad = 0)
+	if (itoad == 0)
 		return (0);
 	if (nb < 0)
 	{
@@ -70,8 +69,7 @@ char	*fill_number(int nb_len, long nb, char *base, int base_len)
 	while (++i < str_len - 1)
 	{
 		digit = nb / power(base_len, nb_len - 1);
-		c = get_char(digit, base);
-		itoad[i] = c;
+		itoad[i] = get_char(digit, base);
 		nb -= digit * power(base_len, nb_len - 1);
 		nb_len--;
 	}
