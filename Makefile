@@ -6,7 +6,7 @@
 #    By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 12:50:34 by jmaia             #+#    #+#              #
-#    Updated: 2021/11/24 17:23:18 by jmaia            ###   ########.fr        #
+#    Updated: 2021/11/25 11:38:38 by jmaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,12 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_putendl_fd.c ft_putnbr_fd.c
 
 SRCS_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft+lstiter.c \
+				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 				ft_lstmap.c
 
 OBJS		=	${SRCS:.c=.o}
 
-OBJS_BONUS	=	${SRCS_BONUS:.c=o}
+OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 NAME		=	libft.a
 
@@ -40,7 +40,7 @@ $(NAME)	:	${OBJS}
 		ar rc ${NAME} ${OBJS}
 
 clean	:
-		rm -f ${OBJS}
+		rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean	:	clean
 		rm -f ${NAME}

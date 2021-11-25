@@ -6,7 +6,7 @@
 /*   By: jmaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:38:33 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/22 17:38:50 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 08:45:56 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		}
 		src_len++;
 	}
-	while (i < size)
+	if (size != 0)
 	{
 		dest[i] = 0;
 		i++;

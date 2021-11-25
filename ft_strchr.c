@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:54:43 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/22 18:02:05 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 10:07:23 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	cur = (char *)s - 1;
 	while (*++cur)
 	{
-		if ((int) *cur == c)
+		if ((int) *cur == (char) c)
 			return (cur);
 	}
 	if (c == 0)

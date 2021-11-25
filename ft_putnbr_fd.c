@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:07:38 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 15:28:38 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 09:10:48 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	ft_putnbr_positive_fd(unsigned int n, int fd)
 	if (n < 10)
 	{
 		c = n + '0';
-		write(fd, &n, 1);
+		write(fd, &c, 1);
 	}
 	else
 	{
@@ -33,5 +33,10 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 		write(fd, "-", 1);
-	ft_putnbr_positive_fd((unsigned int) n, fd);
+	if (n == -2147483648)
+		ft_putnbr_positive_fd((unsigned int) n, fd);
+	else if (n < 0)
+		ft_putnbr_positive_fd((unsigned int)(n * -1), fd);
+	else
+		ft_putnbr_positive_fd(n, fd);
 }

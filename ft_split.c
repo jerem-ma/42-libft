@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:16:37 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 14:19:55 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 11:25:31 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	count_words(char *str, char c)
 		else if (!is_in_word)
 		{
 			++n;
-			is_in_word = 0;
+			is_in_word = 1;
 		}
 	}
 	return (n);

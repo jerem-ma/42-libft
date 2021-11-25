@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:40:12 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 13:53:51 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 11:22:42 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,22 @@ static char	is_in_str(char const *str, char c)
 	{
 		if (c == str[i])
 			return (1);
+		i++;
 	}
 	return (0);
 }
 
 static size_t	get_trimmed_length(char const *s1, char const *set)
 {
-	size_t			length;
-	unsigned int	i;
+	size_t	length;
+	int		i;
 
 	length = ft_strlen(s1);
 	i = length - 1;
 	while (i > 0 && is_in_str(set, s1[i--]))
 		length--;
 	i = 0;
-	while (is_in_str(set, s1[i++]))
+	while (length > 0 && is_in_str(set, s1[i++]))
 		length--;
 	return (length);
 }
@@ -53,10 +54,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed = malloc(sizeof(*trimmed) * (trimmed_length + 1));
 	i_trimmed = 0;
 	i_s1 = 0;
-	while (is_in_str(set, s1[i_s1]))
+	while (s1[i_s1] && is_in_str(set, s1[i_s1]))
 		i_s1++;
 	while (i_trimmed < trimmed_length)
-		trimmed[i_trimmed++] = s1[i_s1];
+		trimmed[i_trimmed++] = s1[i_s1++];
 	trimmed[i_trimmed] = 0;
 	return (trimmed);
 }

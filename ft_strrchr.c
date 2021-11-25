@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 08:51:12 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/23 08:54:52 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 10:08:11 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if ((int) s[i] == c)
+		if (s[i] == (char) c)
 			last_found = (char *)s + i;
 		i++;
 	}
