@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:55:43 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/25 10:00:38 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 21:16:07 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+	if (s == 0)
+		return ;
 	i = 0;
 	while (i < ft_strlen(s))
 	{

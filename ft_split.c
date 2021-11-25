@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:16:37 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/25 11:25:31 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 21:14:06 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	**ft_split(char *str, char c)
 	char	**splitted;
 
 	splitted = malloc(sizeof(*splitted) * (count_words(str, c) + 1));
+	if (splitted == 0)
+		return (0);
 	start = -1;
 	i = -1;
 	i_splitted = 0;

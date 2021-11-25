@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:48:30 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/24 14:52:55 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 21:14:17 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	len_s = ft_strlen(s);
 	mapped = malloc(sizeof(*mapped) * (len_s + 1));
+	if (mapped == 0)
+		return (0);
 	i = 0;
 	while (i < len_s)
 	{

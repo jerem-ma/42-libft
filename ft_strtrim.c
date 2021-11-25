@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:40:12 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/25 11:22:42 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/11/25 21:12:42 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	trimmed_length = get_trimmed_length(s1, set);
 	trimmed = malloc(sizeof(*trimmed) * (trimmed_length + 1));
+	if (trimmed == 0)
+		return (0);
 	i_trimmed = 0;
 	i_s1 = 0;
 	while (s1[i_s1] && is_in_str(set, s1[i_s1]))
