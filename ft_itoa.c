@@ -6,13 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/12/03 14:12:03 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/12/03 18:55:23 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(long nbr)
+unsigned char	*ft_itoa(long nbr)
 {
 	return (ft_itoa_base(nbr, "0123456789"));
 }

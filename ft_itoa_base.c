@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/12/03 14:10:48 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/12/03 18:55:35 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*fill_number(int nb_len, long nb, char *base, int base_len)
 	return (itoad);
 }
 
-char	*ft_itoa_base(long nbr, char *base)
+unsigned char	*ft_itoa_base(long nbr, char *base)
 {
 	int		origin_length;
 	int		length_base;
