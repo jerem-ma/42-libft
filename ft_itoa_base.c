@@ -6,11 +6,12 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/12/06 18:01:18 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/12/06 19:07:06 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 int	get_length(unsigned int nb, int base)
 {
@@ -82,7 +83,7 @@ unsigned char	*ft_itoa_base(long nbr, char *base)
 	int		origin_length;
 	int		length_base;
 
-	length_base = 10;
+	length_base = ft_strlen(base);
 	origin_length = get_length(nbr, length_base);
 	return (fill_number(origin_length, nbr, base, length_base));
 }
