@@ -6,17 +6,17 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/12/07 17:40:43 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/12/07 17:53:48 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	get_length(unsigned int nb, int base)
+int	get_length(long nb, int base)
 {
-	int	length;
-	unsigned int	temp_count;
+	int		length;
+	long	temp_count;
 
 	length = 0;
 	temp_count = nb;
