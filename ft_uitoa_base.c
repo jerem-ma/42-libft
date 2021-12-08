@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/12/08 16:03:25 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:04:35 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ unsigned char	*ufill_number(int nb_len, unsigned long long nb, char *base,
 	}
 	while (++i < str_len - 1)
 	{
-		digit = nb / power(base_len, nb_len - 1);
+		digit = nb / upower(base_len, nb_len - 1);
 		itoad[i] = uget_char(digit, base);
-		nb -= digit * power(base_len, nb_len - 1);
+		nb -= digit * upower(base_len, nb_len - 1);
 		nb_len--;
 	}
 	itoad[i] = 0;
