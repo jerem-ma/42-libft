@@ -6,14 +6,14 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:44:22 by jmaia             #+#    #+#             */
-/*   Updated: 2021/12/08 15:59:15 by jmaia            ###   ########.fr       */
+/*   Updated: 2021/12/08 16:03:25 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	get_length(unsigned long long nb, int base)
+int	uget_length(unsigned long long nb, int base)
 {
 	int					length;
 	unsigned long long	temp_count;
@@ -30,12 +30,12 @@ int	get_length(unsigned long long nb, int base)
 	return (length);
 }
 
-char	get_char(int n, char *base)
+char	uget_char(int n, char *base)
 {
 	return (base[n]);
 }
 
-unsigned long long	power(int x, int pow)
+unsigned long long	upower(int x, int pow)
 {
 	unsigned long long	result;
 	int					n;
@@ -49,7 +49,7 @@ unsigned long long	power(int x, int pow)
 	return (result);
 }
 
-unsigned char	*fill_number(int nb_len, unsigned long long nb, char *base,
+unsigned char	*ufill_number(int nb_len, unsigned long long nb, char *base,
 	int base_len)
 {
 	int				i;
@@ -71,7 +71,7 @@ unsigned char	*fill_number(int nb_len, unsigned long long nb, char *base,
 	while (++i < str_len - 1)
 	{
 		digit = nb / power(base_len, nb_len - 1);
-		itoad[i] = get_char(digit, base);
+		itoad[i] = uget_char(digit, base);
 		nb -= digit * power(base_len, nb_len - 1);
 		nb_len--;
 	}
@@ -85,6 +85,6 @@ unsigned char	*ft_uitoa_base(unsigned long long nbr, char *base)
 	int		length_base;
 
 	length_base = ft_strlen(base);
-	origin_length = get_length(nbr, length_base);
-	return (fill_number(origin_length, nbr, base, length_base));
+	origin_length = uget_length(nbr, length_base);
+	return (ufill_number(origin_length, nbr, base, length_base));
 }
