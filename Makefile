@@ -6,7 +6,7 @@
 #    By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 12:50:34 by jmaia             #+#    #+#              #
-#    Updated: 2022/01/05 17:49:10 by jmaia            ###   ########.fr        #
+#    Updated: 2022/01/05 18:30:16 by jmaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 				ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 				ft_putendl_fd.c ft_putnbr_fd.c ft_itoa_base.c ft_isspace.c \
-				ft_put_bytes_fd.c ft_uitoa_base.c ft_isnbr.c
+				ft_put_bytes_fd.c ft_uitoa_base.c ft_isnbr.c ft_isint.c \
+				ft_strcmp.c
 
 SRCS_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
