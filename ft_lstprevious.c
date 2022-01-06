@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstprevious.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 18:28:20 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/06 14:55:46 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/06 12:49:54 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/06 12:51:54 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
 #include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+t_list	*ft_lstprevious(t_list *lst, t_list *node)
 {
-	size_t	l1;
-	size_t	l2;
+	t_list	*previous;
+	t_list	*cur;
 
-	l1 = ft_strlen(s1);
-	l2 = ft_strlen(s2);
-	if (l1 < l2)
-		return (ft_strncmp(s1, s2, l2 + 1));
-	else
-		return (ft_strncmp(s1, s2, l1 + 1));
+	previous = 0;
+	cur = lst;
+	while (cur->next && cur != node)
+	{
+		previous = cur;
+		cur = cur->next;
+	}
+	if (cur == node)
+		return (previous);
+	return (0);
 }
