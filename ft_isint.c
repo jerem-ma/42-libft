@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 18:07:48 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/06 14:47:36 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/07 18:07:53 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_isint(char *nbr)
 {
 	int		i;
 	char	*test_nbr;
+	int		is_int;
 
 	if (!ft_isnbr(nbr))
 		return (0);
@@ -30,7 +31,9 @@ int	ft_isint(char *nbr)
 	if (!test_nbr)
 		return (0);
 	if (ft_strcmp(nbr + i, test_nbr))
-		return (0);
+		is_int = 0;
+	else
+		is_int = 1;
 	free(test_nbr);
-	return (1);
+	return (is_int);
 }
