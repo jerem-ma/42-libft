@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 18:07:48 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 18:07:53 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/11 17:44:52 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,23 @@ int	ft_isint(char *nbr)
 	int		i;
 	char	*test_nbr;
 	int		is_int;
+	int		has_sign;
 
+	has_sign = 0;
 	if (!ft_isnbr(nbr))
 		return (0);
 	i = 0;
 	while (ft_isspace(nbr[i]))
 		i++;
 	if (nbr[i] == '+' || nbr[i] == '-')
+	{
+		has_sign = 1;
 		i++;
+	}
 	test_nbr = (char *) ft_itoa(ft_atoi(nbr));
 	if (!test_nbr)
 		return (0);
-	if (ft_strcmp(nbr + i, test_nbr))
+	if (ft_strcmp(nbr + i - has_sign, test_nbr))
 		is_int = 0;
 	else
 		is_int = 1;
